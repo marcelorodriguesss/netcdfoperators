@@ -113,7 +113,9 @@ $ ncea -h ifile1.nc ifile2.nc ofile.nc
 #####Extrair variável
 
 $ ncks -v total_resolved_precip,resolved_precip_rate ifile.nc ofile.nc
+
 $ ncks -d x,-38.08 -d y,-5.14 -v temperature ifile.nc ofile.nc
+
 $ ncks -d x,40,60 -d y,40,70 -v temperature ifile.nc ofile.nc
 
 #####Inverter eixos
@@ -126,13 +128,19 @@ $ ncrcat -h 85.nc 86.nc 87.nc 88.nc 89.nc 85-89.nc
 
 #####Renomear atributos de variaveis
 
-$ ncatted -a units,prate,o,c,"mm/day" infile.nc
+$ ncatted -a units,prate,o,c,"mm/day" ifile.nc
 
-$ ncatted -a calendar,time,o,c,"360" infile.nc
+$ ncatted -a calendar,time,o,c,"360" ifile.nc
 
-$ ncatted -a units,time,o,c,"hours since 1989-2-28 0" infile.nc
+$ ncatted -a units,time,o,c,"hours since 1989-2-28 0" ifile.nc
 
-#####Soma, subtraçao, multiplição, divisão
+$ ncatted -a calendar,time,o,c,"360" ifile.nc
+
+$ ncatted -O -a units,x,o,c,degree_east pcp.nc
+
+$ ncatted -O -a units,y,o,c,degree_north pcp.nc
+
+#####Soma, subtração, multiplição e divisão
 
 http://stderr.org/doc/nco/html/ncbo-netCDF-Binary-Operator.html
 
@@ -144,6 +152,52 @@ $ ncbo --op_typ=mlt 1.nc 2.nc 3.nc
 
 $ ncbo --op_typ=/ 1.nc 2.nc 3.nc
 
+### OpenGrADS e Lats4D
 
+http://opengrads.org/doc/scripts/lats4d/lats4d.html
+
+######Extrair/Salvar variável diária no formato binário
+```
+open ifile.ctl
+set dfile 1
+set x 1 145
+set y 1 73
+set z 1
+set fwrite -sq ofile.bin
+set gxout fwrite
+day = 1
+while(day <= 10)
+  set t 'day'
+  d sea_press
+day=day+1
+endwhile
+disable fwrite
+quit
+``` 
+ou
+```
+lats4d.sh -format sequential -i ifile.ctl -o ofile.bin
+````
+
+#####Salvar NetCDF no formato binário
+sdfopen ifile.nc
+set fwrite ofile.bin
+set gxout fwrite
+d pcp
+disable fwrite
+quit
+
+#####Salvar dado no formato NetCDF
+open ifile.ctl
+set x 1 10
+set y 1 10
+set z 1
+set sdfwrite ofile.nc
+sdfwrite pcp
+quit
+
+ou 
+
+lats4d.sh -format netcdf -i ifile.ctl -o ofile
 
 
