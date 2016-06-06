@@ -41,7 +41,9 @@
 #####Selecionar passos de tempo
 
 ```$ cdo seltimestep,1/372 ifile.nc ofile.nc```
+
 ou
+
 ```$ cdo seltimestep,1,3,5 ifile.nc ofile.nc```
 
 #####Calcular a somar dos passos de tempo
