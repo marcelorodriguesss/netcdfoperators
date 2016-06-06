@@ -179,7 +179,7 @@ quit
 ou
 ```
 lats4d.sh -format sequential -i ifile.ctl -o ofile.bin
-````
+```
 
 #####Salvar NetCDF no formato binário```
 ```
@@ -201,5 +201,7 @@ set sdfwrite ofile.nc
 sdfwrite pcp
 quit
 ```
-ou 
-```lats4d.sh -format netcdf -i ifile.ctl -o ofile```
+ou
+```
+lats4d.sh -format netcdf -i ifile.ctl -o ofile
+```
