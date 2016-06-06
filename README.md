@@ -4,7 +4,7 @@
 
 #####Calcular U e V a partir do divergente e da vorticidade.
 
-$ cdo dv2uv ifile.nc ofile.nc
+```$ cdo dv2uv ifile.nc ofile.nc```
 
 #####Transformar uma grade Spectral em uma grade Gaussiana.
 
