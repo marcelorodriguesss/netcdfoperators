@@ -34,9 +34,17 @@
 
 ```$ cdo timselmean,5 ifile ofile```
 
+#####Calcular climatologia mensal
+
+```$ cdo ymonmean ifile ofile```
+
 #####Concatenar arquivos
 
 ```$ cdo cat ifile1.nc ifile2.nc ofile.grib2```
+
+#####Selecionar período de tempo
+
+```$ cdo seldate,1950-01-01,2000-12-31 ifile.nc ofile.nc```
 
 #####Selecionar passos de tempo
 
@@ -54,11 +62,15 @@ ou
   
 #####Calcular diferença entre arquivos
 
-```$ cdo diff ifile1 ifile2```
+```$ cdo sub ifile1 ifile2```
   
 #####Recortar/Selecionar região e salvar em outro arquivo
 
 ```$ cdo sellonlatbox,120,-90,20,-20 ifile ofile```
+
+#####Reescrever matriz global para -180:180 e salvar em outro arquivo
+
+```$ cdo sellonlatbox,-180,180,90,-90 ifile ofile```
   
 #####Calcular média entre arquivos
 
@@ -76,9 +88,13 @@ Exemplo: Número de períodos de seca com mais de 5 dias.
 
 ```$ cdo remapbil,r128x64 ifile.nc ofile.nc```
 
-#####Calcular correlação entre dois arquivos
+#####Calcular correlação temporal entre dois arquivos
 
 ```$ cdo timcor ifile1.nc ifile2.nc ofile.nc```
+
+#####Calcular correlação espacial entre dois arquivos
+
+```$ cdo fldcor ifile1.nc ifile2.nc ofile.nc```
 
 #####Extrair, de um série temporal completa, períodos sazonais.
 
