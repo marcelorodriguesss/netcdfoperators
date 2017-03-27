@@ -223,3 +223,7 @@ ou
 ```
 lats4d.sh -format netcdf -i ifile.ctl -o ofile
 ```
+
+### Refs:  
+http://www.climate-cryosphere.org/wiki/index.php?title=Regridding_with_CDO
+http://forge.ipsl.jussieu.fr/orchidee/wiki/Documentation/UserGuide/CDO
