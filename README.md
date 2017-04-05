@@ -6,47 +6,47 @@
 
 ```$ cdo dv2uv ifile.nc ofile.nc```
 
-#####Transformar uma grade Spectral em uma grade Gaussiana.
+##### Transformar uma grade Spectral em uma grade Gaussiana.
 
 ```$ cdo sp2gp ifile.nc ofile.nc```
 
-#####Converter de GRIB para NetCDF.
+##### Converter de GRIB para NetCDF.
 
 ```$ cdo -r -f nc -t echam4 copy ifile.nc ofile.grb```
 
-#####Converter de GRIB2 para NetCDF.
+##### Converter de GRIB2 para NetCDF.
 
 ```$ cdo -f nc copy ifile.grib2 ofile.nc```
 
-#####Calcular média diária
+##### Calcular média diária
 
 ```$ cdo daymean ifile.nc ofile.nc```
 
-#####Calcular média mensal
+##### Calcular média mensal
 
 ```$ cdo monmean ifile.nc ofile.nc```
 
-#####Calcular anomalia diária
+##### Calcular anomalia diária
 
 ```$ cdo ydaysub ifile.nc climatology.nc anomaly.nc``` 
 
-#####Calcular pentadas
+##### Calcular pentadas
 
 ```$ cdo timselmean,5 ifile ofile```
 
-#####Calcular climatologia mensal
+##### Calcular climatologia mensal
 
 ```$ cdo ymonmean ifile ofile```
 
-#####Concatenar arquivos
+##### Concatenar arquivos
 
 ```$ cdo cat ifile1.nc ifile2.nc ofile.grib2```
 
-#####Selecionar período de tempo
+##### Selecionar período de tempo
 
 ```$ cdo seldate,1950-01-01,2000-12-31 ifile.nc ofile.nc```
 
-#####Selecionar passos de tempo
+##### Selecionar passos de tempo
 
 ```$ cdo seltimestep,1/372 ifile.nc ofile.nc```
 
@@ -54,69 +54,69 @@ ou
 
 ```$ cdo seltimestep,1,3,5 ifile.nc ofile.nc```
 
-#####Calcular a somar dos passos de tempo
+##### Calcular a somar dos passos de tempo
 
 ```$ cdo timselsum,1,2,3 ifile.nc ofile.nc```
 
-#####Exibir informações para cada campo do arquivo
+##### Exibir informações para cada campo do arquivo
 
 ```$ cdo info ifile.nc```
   
-#####Calcular diferença entre arquivos
+##### Calcular diferença entre arquivos
 
 ```$ cdo sub ifile1 ifile2```
   
-#####Recortar/Selecionar região e salvar em outro arquivo
+##### Recortar/Selecionar região e salvar em outro arquivo
 
 ```$ cdo sellonlatbox,120,-90,20,-20 ifile ofile```
 
-#####Reescrever matriz global para -180:180 e salvar em outro arquivo
+##### Reescrever matriz global para -180:180 e salvar em outro arquivo
 
 ```$ cdo sellonlatbox,-180,180,90,-90 ifile ofile```
   
-#####Calcular média entre arquivos
+##### Calcular média entre arquivos
 
 ```$ cdo ensmean ifile1.nc ifile2.nc ifile3.nc ifile4.nc ifile5.nc ifile6.nc ofile.nc```
 
 ```$ cdo ensavg ifile1.nc ifile2.nc ifile3.nc ifile4.nc ifile5.nc ifile6.nc ofile.nc```
 
-#####Calcular número de períodos consecutivos menor que X
+##### Calcular número de períodos consecutivos menor que X
 
 Exemplo: Número de períodos de seca com mais de 5 dias.
 
 ```$ cdo eca_cdd[,5] ifile.nc ofile.nc```
 
-#####Interpolar uma grade Gaussiana qualquer (e.g. 384x190-cfs) para (128x64-echam)
+##### Interpolar uma grade Gaussiana qualquer (e.g. 384x190-cfs) para (128x64-echam)
 
 ```$ cdo remapbil,r128x64 ifile.nc ofile.nc```
 
-#####Calcular correlação temporal entre dois arquivos
+##### Calcular correlação temporal entre dois arquivos
 
 ```$ cdo timcor ifile1.nc ifile2.nc ofile.nc```
 
-#####Calcular correlação espacial entre dois arquivos
+##### Calcular correlação espacial entre dois arquivos
 
 ```$ cdo fldcor ifile1.nc ifile2.nc ofile.nc```
 
-#####Extrair, de um série temporal completa, períodos sazonais.
+##### Extrair, de um série temporal completa, períodos sazonais.
 
 Exemplo: extrair DJF
 
 ```$ cdo selmon,12,01,02 ifile.nc ofile.nc```
 
-#####Calcular a soma entre arquivos
+##### Calcular a soma entre arquivos
 
 ```$ cdo add ifile1 ifile2 ofile```
 
 ```$ cdo add ifile3 -add ifile1 ifile2 ofile```
 
-#####Calcular média diária a partir de um arquivo com passo de tempo de 6h em 6h
+##### Calcular média diária a partir de um arquivo com passo de tempo de 6h em 6h
 
 ```cdo daymean -mergetime 198101-6h.nc daymean.nc```
 
 ### NetCDF
 
-#####Exibir cabeçalho do arquivo
+##### Exibir cabeçalho do arquivo
 
 ```$ ncdump -h ifile.nc```
 
