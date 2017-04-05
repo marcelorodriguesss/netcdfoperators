@@ -110,6 +110,10 @@ Exemplo: extrair DJF
 
 ```$ cdo add ifile3 -add ifile1 ifile2 ofile```
 
+#####Calcular média diária a partir de um arquivo com passo de tempo de 6h em 6h
+
+```cdo daymean -mergetime 198101-6h.nc daymean.nc```
+
 ### NetCDF
 
 #####Exibir cabeçalho do arquivo
