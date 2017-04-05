@@ -120,21 +120,21 @@ Exemplo: extrair DJF
 
 ```$ ncdump -h ifile.nc```
 
-#####Exibir pontos de grade
+##### Exibir pontos de grade
 
 ```$ ncdump -v x,y ifile```
 
 ### NCO
 
-#####Renomear variaveis
+##### Renomear variaveis
 
 ```$ ncrename -v old_var,new_var ifile.nc ofile.nc```
 
-#####Calcular média entre arquivos
+##### Calcular média entre arquivos
 
 ```$ ncea -h ifile1.nc ifile2.nc ofile.nc```
 
-#####Extrair variável
+##### Extrair variável
 
 ```$ ncks -v total_resolved_precip,resolved_precip_rate ifile.nc ofile.nc```
 
@@ -142,15 +142,15 @@ Exemplo: extrair DJF
 
 ```$ ncks -d x,40,60 -d y,40,70 -v temperature ifile.nc ofile.nc```
 
-#####Inverter eixos
+##### Inverter eixos
 
 ```$ ncpdq -h -a -lat ifile.nc ofile.nc```
 
-#####Concatenar arquivos 
+##### Concatenar arquivos 
 
 ```$ ncrcat -h 85.nc 86.nc 87.nc 88.nc 89.nc 85-89.nc```
 
-#####Renomear atributos de variaveis
+##### Renomear atributos de variaveis
 
 ```$ ncatted -a units,prate,o,c,"mm/day" ifile.nc```
 
@@ -164,7 +164,7 @@ Exemplo: extrair DJF
 
 ```$ ncatted -O -a units,y,o,c,degree_north ifile.nc```
 
-#####Soma, subtração, multiplição e divisão
+##### Soma, subtração, multiplição e divisão
 
 http://stderr.org/doc/nco/html/ncbo-netCDF-Binary-Operator.html
 
@@ -180,7 +180,7 @@ http://stderr.org/doc/nco/html/ncbo-netCDF-Binary-Operator.html
 
 http://opengrads.org/doc/scripts/lats4d/lats4d.html
 
-######Extrair/Salvar variável diária no formato binário
+###### Extrair/Salvar variável diária no formato binário
 ```
 open ifile.ctl
 set dfile 1
@@ -203,7 +203,7 @@ ou
 lats4d.sh -format sequential -i ifile.ctl -o ofile.bin
 ```
 
-#####Salvar NetCDF no formato binário```
+##### Salvar NetCDF no formato binário```
 ```
 sdfopen ifile.nc
 set fwrite ofile.bin
@@ -213,7 +213,7 @@ disable fwrite
 quit
 ```
 
-#####Salvar dado no formato NetCDF
+##### Salvar dado no formato NetCDF
 ```
 open ifile.ctl
 set x 1 10
