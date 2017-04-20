@@ -115,9 +115,7 @@ Exemplo: extrair DJF
 ```cdo daymean -mergetime 198101-6h.nc daymean.nc```
 
 ##### Juntar várias arquivos com váriáveis diferente em um único arquivo
-
     cdo merge pcp.grb ts.grb vars.grb
-
 ### NetCDF
 
 ##### Exibir cabeçalho do arquivo
