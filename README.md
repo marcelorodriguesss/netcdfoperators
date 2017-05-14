@@ -90,7 +90,7 @@ Exemplo: Número de períodos de seca com mais de 5 dias.
 
 ```$ cdo remapbil,r128x64 ifile.nc ofile.nc```
 
-```cdo genbil,grid.nc infile weights.nc && cdo remap,grid.nc,weights.nc infile remapped.nc```
+```$ cdo genbil,grid.nc infile weights.nc && cdo remap,grid.nc,weights.nc infile remapped.nc```
 
 ##### Calcular correlação temporal entre dois arquivos
 
